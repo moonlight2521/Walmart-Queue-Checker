@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            width: 380px;
+            font-family: 'Whitney', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: #36393f;
+            color: #dcddde;
+            padding: 16px;
+            margin: 0;
+        }
+
+        h3 {
+            color: #fff;
+            margin-top: 0;
+            font-size: 16px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+            font-weight: 700;
+        }
+
+        .discord-btn {
+            display: block;
+            background-color: #5865F2;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 16px;
+            transition: background-color 0.2s;
+            font-size: 14px;
+        }
+
+        .discord-btn:hover {
+            background-color: #4752C4;
+        }
+
+        .data-item {
+            background-color: #2f3136;
+            margin-bottom: 8px;
+            padding: 10px;
+            border-radius: 4px;
+        }
+
+        .label {
+            font-weight: 700;
+            color: #b9bbbe;
+            font-size: 11px;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+
+        .value {
+            font-size: 14px;
+            color: #fff;
+            word-break: break-word;
+        }
+
+        .unlikely {
+            color: #ed4245;
+            /* Red */
+            font-weight: bold;
+        }
+
+        .likely {
+            color: #3ba55c;
+            /* Green */
+            font-weight: bold;
+        }
+
+        #display p {
+            color: #b9bbbe;
+            font-size: 13px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <h3>Queue Details</h3>
+    <div id="display">
+        <p>Please open a Walmart Queue page.</p>
+    </div>
+
+    <div class="data-item">
+        <div class="label">Auto Refresh</div>
+        <div style="display: flex; gap: 4px; align-items: center; margin-bottom: 8px;">
+            <div style="flex: 1; display: flex; flex-direction: column;">
+                <label style="font-size: 10px; color: #b9bbbe; margin-bottom: 2px;">Hour</label>
+                <input type="number" id="refresh-hour" min="1" max="12" placeholder="8"
+                    style="padding: 4px; border-radius: 4px; border: 1px solid #4f545c; background: #40444b; color: white; text-align: center;">
+            </div>
+            <span style="color: #b9bbbe; padding-top: 14px;">:</span>
+            <div style="flex: 1; display: flex; flex-direction: column;">
+                <label style="font-size: 10px; color: #b9bbbe; margin-bottom: 2px;">Min</label>
+                <input type="number" id="refresh-minute" min="0" max="59" placeholder="59"
+                    style="padding: 4px; border-radius: 4px; border: 1px solid #4f545c; background: #40444b; color: white; text-align: center;">
+            </div>
+            <span style="color: #b9bbbe; padding-top: 14px;">:</span>
+            <div style="flex: 1; display: flex; flex-direction: column;">
+                <label style="font-size: 10px; color: #b9bbbe; margin-bottom: 2px;">Sec</label>
+                <input type="number" id="refresh-second" min="0" max="59" placeholder="59"
+                    style="padding: 4px; border-radius: 4px; border: 1px solid #4f545c; background: #40444b; color: white; text-align: center;">
+            </div>
+            <span style="color: #b9bbbe; padding-top: 14px;">.</span>
+            <div style="flex: 1; display: flex; flex-direction: column;">
+                <label style="font-size: 10px; color: #b9bbbe; margin-bottom: 2px;">MS</label>
+                <input type="number" id="refresh-ms" min="0" max="999" placeholder="960"
+                    style="padding: 4px; border-radius: 4px; border: 1px solid #4f545c; background: #40444b; color: white; text-align: center;">
+            </div>
+            <div style="flex: 1; display: flex; flex-direction: column;">
+                <label style="font-size: 10px; color: #b9bbbe; margin-bottom: 2px;">AM/PM</label>
+                <select id="refresh-ampm">
+                    <option value="" disabled selected>--</option>
+                    <option value="AM">AM</option>
+                    <option value="PM">PM</option>
+                </select>
+            </div>
+        </div>
+        <div style="display: flex; gap: 8px;">
+            <button id="clear-refresh"
+                style="flex: 1; padding: 6px; background: #ed4245; border: none; border-radius: 4px; color: white; cursor: pointer;">Clear</button>
+        </div>
+        <div id="refresh-status" style="margin-top: 8px; font-size: 12px; color: #b9bbbe;"></div>
+    </div>
+    <script src="popup.js"></script>
+</body>
+
+</html>
